@@ -38,5 +38,5 @@ app.get("/tarefa/", (_, resposta)=>{
 })
 
 app.listen( 8000,()=>{
-    console.log("Express traballando...");
+    console.log("[Backend] traballando...")
 })
