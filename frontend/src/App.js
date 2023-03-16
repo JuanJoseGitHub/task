@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect , useState } from "react";
-
+import EngadirTarefa from "./componentes/EngadirTarefa"
+import AmosarTarefas from "./componentes/AmosarTarefas"
 
 function App() {
 
@@ -12,23 +13,36 @@ function App() {
   )
 
   function ActualizaTarefas() {
-    fetch("http://localhost:8000/tarefa/").then(reaccionParaResposta)
-
+    fetch("http://localhost:8000/tarefa/").then(reaccionResposta)
   }
 
-  function reaccionParaResposta(resposta){
-    resposta.json().then(reaccionParaNovosDatos)
+  // Equivale a Const promesaDatos=resposta.json()
+  // promesaDatos.then(ManexadorResposta)
+  function reaccionResposta(resposta){
+    resposta.json().then(reaccionNovosDatos)
   }
 
-  function reaccionParaNovosDatos(novosDatos){
+  function reaccionNovosDatos(novosDatos){
     setTarefas(novosDatos)
   }
+
+
+//  TODO
+//  function BorraTarefas()
+
+
 
   return (
     <>
     <div>Atarefado 1.0</div>
-    <button id="actualiza">Actualiza TAREFAS</button>
-    
+    <button id="actualiza" onClick={ActualizaTarefas}>Actualiza TAREFAS</button>
+    <div>
+    <EngadirTarefa funcionActualizarTarefas={ActualizaTarefas}/>
+    </div>
+    <div>
+    <AmosarTarefas tarefas={tarefas}/>
+    </div>
+    {/* <button id="borra" onClick={BorraTarefas}>Borra TAREFAS ¡Usar con cuidado!</button> */}
     </>
   );
 }
