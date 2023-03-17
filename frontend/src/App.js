@@ -2,7 +2,6 @@ import './App.css';
 import { useEffect , useState } from "react";
 import EngadirTarefa from "./componentes/EngadirTarefa"
 import AmosarTarefas from "./componentes/AmosarTarefas"
-import BorrarTarefa from './componentes/BorrarTarefa';
 
 function App() {
 
@@ -27,19 +26,18 @@ function App() {
     setTarefas(novosDatos)
   }
 
-
-
-  function BorraTarefas() {
-    <BorrarTarefa/>
-    console.log ("Tarefa borrada")
+  function BorraTarefas() {  
+    const novasTarefas = [...tarefas]
+    novasTarefas.pop()
+    setTarefas(novasTarefas)
+    console.log ({tarefas})
   }
-
-
 
   return (
     <>
-    <div>Atarefado 1.0</div>
-    <button id="actualiza" onClick={ActualizaTarefas}>Actualiza TAREFAS</button>
+    <main>
+    <div><h2>Atarefado 1.0</h2></div>
+    <button id="actualiza" onClick={ActualizaTarefas}>Actualiza TAREFAS🔄</button>
     <div>
     <EngadirTarefa funcionActualizarTarefas={ActualizaTarefas}/>
     </div>
@@ -47,6 +45,7 @@ function App() {
     <AmosarTarefas tarefas={tarefas}/>
     </div>
     <button id="borra" onClick={BorraTarefas}>Borra TAREFAS ¡Usar con cuidado!</button> 
+    </main>
     </>
   );
 }

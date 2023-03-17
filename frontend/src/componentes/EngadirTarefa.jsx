@@ -44,10 +44,10 @@ function EngadirTarefa({funcionActualizarTarefas}) {
     return (
         <>
         <label>
-            Nueva tarea
+            Nova tarefa
             <input type="text" value={descripcion} onInput={manejadorInput}/>
         </label>
-        <button onClick={manejadorClick}>Añadir</button>
+        <button onClick={manejadorClick}>Engadir</button>
         </>
     )
 

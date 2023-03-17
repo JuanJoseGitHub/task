@@ -37,6 +37,17 @@ app.get("/tarefa/", (_, resposta)=>{
     resposta.send(JSON.stringify(tarefas))
 })
 
+app.put("/tarefa/", (_, resposta)=>{
+    resposta.status(200)
+    resposta.send("Ok")
+})
+
+app.delete("/tarefa/", (_, resposta)=>{
+    resposta.status(200)
+    resposta.send("Ok")
+})
+
+
 app.listen( 8000,()=>{
     console.log("[Backend] traballando...")
 })
