@@ -1,15 +1,17 @@
 import React from 'react'
 
-function AmosarTarefas({tarefas}) {
-  return (
-    <ol>
+function BorrarTarefa({tarefas}) {
+
+       return (
+    <>
         {
             tarefas.map(
             tarefa=><li key={tarefa.id}>{tarefa.descripcion} <input type="checkbox" checked={tarefa.rematada}/></li>
             )
         }
-    </ol>
+    </>
+
   )
 }
 
-export default AmosarTarefas
+export default BorrarTarefa

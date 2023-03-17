@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect , useState } from "react";
 import EngadirTarefa from "./componentes/EngadirTarefa"
 import AmosarTarefas from "./componentes/AmosarTarefas"
+import BorrarTarefa from './componentes/BorrarTarefa';
 
 function App() {
 
@@ -27,8 +28,11 @@ function App() {
   }
 
 
-//  TODO
-//  function BorraTarefas()
+
+  function BorraTarefas() {
+    <BorrarTarefa/>
+    console.log ("Tarefa borrada")
+  }
 
 
 
@@ -42,7 +46,7 @@ function App() {
     <div>
     <AmosarTarefas tarefas={tarefas}/>
     </div>
-    {/* <button id="borra" onClick={BorraTarefas}>Borra TAREFAS ¡Usar con cuidado!</button> */}
+    <button id="borra" onClick={BorraTarefas}>Borra TAREFAS ¡Usar con cuidado!</button> 
     </>
   );
 }
