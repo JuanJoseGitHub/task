@@ -6,6 +6,7 @@ import AmosarTarefas from "./componentes/AmosarTarefas"
 function App() {
 
   const [tarefas, setTarefas] = useState([])
+  const [state, setState]=useState("")
 
   useEffect(
     ActualizaTarefas,
@@ -27,10 +28,11 @@ function App() {
   }
 
   function BorraTarefas() {  
-    const novasTarefas = [...tarefas]
-    novasTarefas.pop()
-    setTarefas(novasTarefas)
-    console.log ({tarefas})
+    fetch("http://localhost:8000/tarefa/", { method: 'DELETE' }).then(() => this.setState({ status: 'Delete exitoso' })) 
+    // const novasTarefas = [...tarefas]
+    //  setTarefas(novasTarefas)
+    //  console.log ({tarefas})
+    
   }
 
   return (

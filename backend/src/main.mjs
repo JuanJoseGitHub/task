@@ -29,7 +29,7 @@ app.get("/", (_, resposta)=>{
 app.post("/tarefa/", (peticion, resposta)=>{
     tarefas.push(peticion.body)
     resposta.status(200)
-    resposta.send("Ok")
+    resposta.send("Petición POST (crear) feita con éxito")
 })
 
 app.get("/tarefa/", (_, resposta)=>{
@@ -39,12 +39,13 @@ app.get("/tarefa/", (_, resposta)=>{
 
 app.put("/tarefa/", (_, resposta)=>{
     resposta.status(200)
-    resposta.send("Ok")
+    resposta.send("Modificado")
 })
 
 app.delete("/tarefa/", (_, resposta)=>{
+    tarefas.pop()
     resposta.status(200)
-    resposta.send("Ok")
+    resposta.send("Borrado")
 })
 
 
