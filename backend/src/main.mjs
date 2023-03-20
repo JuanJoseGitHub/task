@@ -39,13 +39,13 @@ app.get("/tarefa/", (_, resposta)=>{
 
 app.put("/tarefa/", (_, resposta)=>{
     resposta.status(200)
-    resposta.send("Modificado")
+    resposta.send("Modificado con PUT")
 })
 
 app.delete("/tarefa/", (_, resposta)=>{
     tarefas.pop()
     resposta.status(200)
-    resposta.send("Borrado")
+    resposta.send("Borrado en BACKEND")
 })
 
 

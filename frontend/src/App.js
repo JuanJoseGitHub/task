@@ -28,8 +28,12 @@ function App() {
 
   function BorraTarefas() {  
     fetch("http://localhost:8000/tarefa/", { method: 'DELETE' }).then(() => console.log ( 'Delete exitoso' )) 
-    
   }
+
+   function PutTarefas() {
+    // fetch("http://localhost:8000/tarefa/", { method: 'POST' }).then(() => console.log("Lee" ))
+    fetch("http://localhost:8000/tarefa/", { method: 'PUT' }).then(() => console.log ( 'PUT exitoso' ))  
+    }
 
   return (
     <>
@@ -42,7 +46,8 @@ function App() {
     <div>
     <AmosarTarefas tarefas={tarefas}/>
     </div>
-    <button id="borra" onClick={BorraTarefas}>Borra TAREFAS ¡Actualiza para ver!</button> 
+    <button id="borra" onClick={BorraTarefas}>Borra TAREFAS (Lémbrate de actualizar)</button>
+    <button id="put" onClick={PutTarefas}>Actualiza TAREFAS con PUT</button>  
     </main>
     </>
   );
