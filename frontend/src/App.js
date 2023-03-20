@@ -6,7 +6,6 @@ import AmosarTarefas from "./componentes/AmosarTarefas"
 function App() {
 
   const [tarefas, setTarefas] = useState([])
-  const [state, setState]=useState("")
 
   useEffect(
     ActualizaTarefas,
@@ -28,10 +27,7 @@ function App() {
   }
 
   function BorraTarefas() {  
-    fetch("http://localhost:8000/tarefa/", { method: 'DELETE' }).then(() => this.setState({ status: 'Delete exitoso' })) 
-    // const novasTarefas = [...tarefas]
-    //  setTarefas(novasTarefas)
-    //  console.log ({tarefas})
+    fetch("http://localhost:8000/tarefa/", { method: 'DELETE' }).then(() => console.log ( 'Delete exitoso' )) 
     
   }
 
@@ -46,7 +42,7 @@ function App() {
     <div>
     <AmosarTarefas tarefas={tarefas}/>
     </div>
-    <button id="borra" onClick={BorraTarefas}>Borra TAREFAS ¡Usar con cuidado!</button> 
+    <button id="borra" onClick={BorraTarefas}>Borra TAREFAS ¡Actualiza para ver!</button> 
     </main>
     </>
   );
