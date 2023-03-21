@@ -37,9 +37,12 @@ app.get("/tarefa/", (_, resposta)=>{
     resposta.send(JSON.stringify(tarefas))
 })
 
-app.put("/tarefa/", (_, resposta)=>{
+app.put("/tarefa/", (peticion, resposta)=>{
+    const indice=tarefas.findIndex ((item)=>{return item.id === peticion.body.id})
+    console.log ("Put con indice:"+indice)
+    tarefas.splice(indice,1,peticion.body) 
     resposta.status(200)
-    resposta.send("Modificado con PUT")
+    resposta.send("PUT en BACKEND")
 })
 
 app.delete("/tarefa/", (_, resposta)=>{

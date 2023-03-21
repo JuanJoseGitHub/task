@@ -31,9 +31,9 @@ function App() {
   }
 
    function PutTarefas() {
-    // fetch("http://localhost:8000/tarefa/", { method: 'POST' }).then(() => console.log("Lee" ))
-    fetch("http://localhost:8000/tarefa/", { method: 'PUT' }).then(() => console.log ( 'PUT exitoso' ))  
-    }
+    
+    fetch("http://localhost:8000/tarefa/", { method: 'PUT' }).then(() => console.log ( 'PUT exitoso' ))     
+  }
 
   return (
     <>
@@ -47,7 +47,7 @@ function App() {
     <AmosarTarefas tarefas={tarefas}/>
     </div>
     <button id="borra" onClick={BorraTarefas}>Borra TAREFAS (Lémbrate de actualizar)</button>
-    <button id="put" onClick={PutTarefas}>Actualiza TAREFAS con PUT</button>  
+    <button id="put" onClick={PutTarefas}>Actualiza TAREFAS con PUT id=33</button>  
     </main>
     </>
   );
